@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <title>Title</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
 </head>
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
@@ -11,37 +13,26 @@
     * {
         font-family: Jua;
     }
-    .time{
-        margin: 0px 0px 0px 81rem;
+    .date{
+        margin: 2rem 0px 0px 7.5rem;
+    }
+    .time {
+        margin-left: 7.5rem;
     }
 
-    .border {
-
-        width: 175px;
-        height: 140px;
-        margin: 38rem auto auto 1rem;
-
-        border-top-color: gray;
-        border-bottom-color: gray;
-        border-left-color: gray;
-        border-right-color: gray;
-        border-style: solid;
-        border-width: 1px;
-        border-radius: 10px;
-        background-color: cadetblue;
-    }
 
     .weather {
 
         width: 175px;
-        height: 140px;
-        margin: 38rem auto auto 1rem;
+        height: 170px;
+        margin: 1rem 0px auto 3rem;
+
 
 
     }
 
     .card-img-top {
-        padding-left: 3.5rem;
+        padding-left: 5.5rem;
     }
 
     .card-body {
@@ -49,18 +40,51 @@
         text-align: center;
 
     }
+
+    .main_img{
+        width: 200px;
+        height: 200px;
+
+        border-radius: 200px;
+
+    }
+    .card{
+
+        margin-left: 1rem;
+    }
 </style>
 
 
 <script>
-    setInterval(function () {
+    function crrCal(){
+        let today = new Date();
 
-        var timer = new Date();
-        var hour = timer.getHours();
-        var minute = timer.getMinutes();
-        document.getElementById('clock').innerHTML =("현재 시각 : " + hour + ":" + minute);
-    }, 1000);
+        let year = today.getFullYear();
+        let month = today.getMonth() + 1; // 0부터 시작하기때문에 1을 더해준다.
+        let date = today.getDate();
 
+
+        document.getElementById('cal').innerHTML =
+            year + '년' + month + '월' + date + '일';
+    }
+
+    function startTime(){
+        var today = new Date();
+        var h = today.getHours();
+        var m = today.getMinutes();
+        var s = today.getSeconds();
+        h = checkTime(h);
+        m = checkTime(m);
+        s = checkTime(s);
+        document.getElementById('clock').innerHTML =
+            h + '시' + m + '분' + s + '초';
+        var t = setTimeout(startTime, 500);
+    }
+
+    function checkTime(i) {
+        if(i < 10){i = "0" + i}; // 10보다 작을 경우 앞에 0을 붙여준다.
+        return i;
+    }
 
     $.ajax({
         type: "GET",
@@ -80,7 +104,25 @@
         }
     })
 </script>
-<body>
+<body onload="crrCal(), startTime()" style="background-color:#FFF5EE;" class="text-danger">
+<h1 style="font-family: Jua;">Jongveloper<small class="text-muted">(feat.자기소개)</small></h1>
+<div class="p-3 mb-2 bg-danger text-white">첫 토이프로젝트</div>
+<div class="card" style="width: 18rem;">
+  <img src="https://cdn.pixabay.com/photo/2017/08/10/07/41/macintosh-2619617_1280.jpg" class="main_img" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title" style="margin-left: 3.5rem;">토이프로젝트</h5>
+    <p class="card-text" style="margin-left: 3.5rem;">개발자를 목표로 공부하고 있습니다.</p>
+    <a href="https://github.com/Jongveloper" class="btn btn-danger" style="margin-left: 3.5rem;">깃허브 보러가기</a>
+  </div>
+</div>
+<div class="card" style="width: 18rem;">
+  <div class="card-body" style="margin-left: 2rem;">
+    <h6 class="card-subtitle mb-2 text-muted">마음가짐</h6>
+    <p class="card-text">개발은 팀과함께하는 것이기에 피해가 가지않도록 열심히 하겠습니다.</p>
+    <a href="https://destory.tistory.com/" class="card-link">개발자 블로그 구경하기</a>
+  </div>
+</div>
+<div id="cal" class="date"></div>
 <div id="clock" class="time"></div>
 <div class='weather border'>
     <div class="card" style="width: 18rem;">
