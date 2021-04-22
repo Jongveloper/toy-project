@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>토이프로젝트</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 
@@ -14,18 +14,21 @@
         font-family: Jua;
     }
     .date{
-        margin: 2rem 0px 0px 7.5rem;
+        margin: 0rem 0px 0px 7.5rem;
     }
     .time {
+
         margin-left: 7.5rem;
     }
 
-
+    .intro{
+        margin: 10rem 0px 0px 30rem;
+    }
     .weather {
 
         width: 175px;
         height: 170px;
-        margin: 1rem 0px auto 3rem;
+        margin: 0rem 0px auto 3rem;
 
 
 
@@ -46,12 +49,38 @@
         height: 200px;
 
         border-radius: 200px;
+        margin-top: -26rem;
 
     }
     .card{
 
         margin-left: 1rem;
     }
+
+    .mb-3{
+        width: 400px;
+
+        margin-top: 2rem;
+        margin-left: 29rem;
+    }
+    .blog{
+        height: 70px;
+
+        margin-top: -10rem;
+        margin-left: 51rem;
+
+    }
+
+    .inner-text{
+        color: black;
+        font-size: 20px;
+        margin-left: 30rem;
+    }
+    .text-position{
+        margin-top: -45rem;
+    }
+
+
 </style>
 
 
@@ -107,14 +136,29 @@
 <body onload="crrCal(), startTime()" style="background-color:#FFF5EE;" class="text-danger">
 <h1 style="font-family: Jua;">Jongveloper<small class="text-muted">(feat.자기소개)</small></h1>
 <div class="p-3 mb-2 bg-danger text-white">첫 토이프로젝트</div>
+<h2 class="intro" style="font-weight: bold;font-family: Jua;">기본정보</h2>
+  <div class="mb-3 row">
+    <label for="staticEmail" class="col-sm-2 col-form-label">이메일</label>
+    <div class="col-sm-10">
+      <input type="text" style="border-radius: 8px; background-color: #FFF5EE; border-color: peru; margin-top: -0.3rem; margin-left: -2rem; " readonly class="form-control-plaintext" id="staticEmail" value="woochop123@gmail.com">
+    </div>
+  </div><!--이메일-->
+  <div class="mb-3 row">
+    <label for="staticEmail" class="col-sm-2 col-form-label">휴대폰</label>
+    <div class="col-sm-10">
+      <input type="text" style="text-align: center;border-radius: 8px; background-color: #FFF5EE; border-color: peru; margin-top: -0.3rem; margin-left: -2rem; " readonly class="form-control-plaintext" id="staticPhone" value="010-2352-4171">
+    </div>
+  </div><!--핸드폰번호-->
+  <button style="border-radius: 15px; font-family: Jua;" onclick="location.href='https://www.notion.so/hh99team2/2-2-182466e1abed4cc98415d20536ad490c'"type="button" class="btn btn-danger blog">노션 보러가기</button>
+    <h2 class="intro" style="margin-top: -1rem; font-weight: bold;font-family: Jua;">현재 공부중인 언어</h2>
 <div class="card" style="width: 18rem;">
   <img src="https://cdn.pixabay.com/photo/2017/08/10/07/41/macintosh-2619617_1280.jpg" class="main_img" alt="Card image cap">
   <div class="card-body">
-    <h5 class="card-title" style="margin-left: 3.5rem;">토이프로젝트</h5>
+    <h5 class="card-title" style="margin-left: 3.5rem; margin-top: 0rem;">토이프로젝트</h5>
     <p class="card-text" style="margin-left: 3.5rem;">개발자를 목표로 공부하고 있습니다.</p>
     <a href="https://github.com/Jongveloper" class="btn btn-danger" style="margin-left: 3.5rem;">깃허브 보러가기</a>
-  </div>
-</div>
+  </div> <!--개발자 마음가짐 깃허브보러가기-->
+</div><!--프로필사진-->
 <div class="card" style="width: 18rem;">
   <div class="card-body" style="margin-left: 2rem;">
     <h6 class="card-subtitle mb-2 text-muted">마음가짐</h6>
@@ -128,12 +172,25 @@
     <div class="card" style="width: 18rem;">
         <img class="card-img-top" id="img" src="" alt="Card image cap">
         <div class="card-body">
-            <h3 class="Seoul" style="margin-top:0px; margin-bottom: 2px;"></h3>
+            <h3 class="Seoul" style="margin-bottom: 2px; margin-top: 2px;"></h3>
             <div class="Max_temp"></div>
             <div class="Min_temp"></div>
             <div class="Humidity"></div>
         </div>
     </div>
 </div>
+<p class="inner-text text-position">1. 자바스크립트</p>
+<p class="inner-text">2. 파이썬</p>
+<h2 style="font-weight: bold;font-family: Jua; margin-left: 30rem;">희망하는 주특기</h2>
+<p class="inner-text">백엔드 개발자를 목표로 하고있습니다.</p>
+<h2 style="font-weight: bold;font-family: Jua; margin-left: 30rem;">프로그래머가 되고싶던 계기</h2>
+<div class="inner-text">저는 동대문 종합시장에서 6년차에 퇴사하였습니다.</div>
+<div class="inner-text">1년차에는 원단 입출고관리 그리고 2년차에는 매장관리 및 원단 입출고관리</div>
+<div class="inner-text">3년차부터는 쭉 원단영업과 매장관리를 해왔습니다.</div>
+<div class="inner-text">저는 꿈이 따로 없었고 목표또한 없었습니다.</div>
+<div class="inner-text">그러던 와중 부의추월차선을 읽게되었고 프로그래밍의 세계를 알게되었습니다.</div>
+<div class="inner-text">프로그래밍은 너무 매력적이었고 저에게 목표와 꿈이 생기게 해주었습니다.</div>
+<div class="inner-text">아직은 한참 미숙하지만 열심히 노력해서 백엔드개발자가 되고싶습니다.</div>
+<div class="inner-text">좋은 개발자가 되기위해 항상 노력하는 사람이 되겠습니다!</div>
 </body>
 </html>
